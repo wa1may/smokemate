@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationCityField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/city"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.436" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationCigaretteField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/your_favorite_cigarrettes"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.501" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationNameField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.17" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationSurnameField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/surname"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.237" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationPhoneNumberField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/phone_number"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.305" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationCountryField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/country"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.369" />
+
+    <Button
+        android:id="@+id/registrationNextButton2"
+        android:layout_width="111dp"
+        android:layout_height="60dp"
+        android:text="@string/nextRegistrationSecondButton"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.625" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

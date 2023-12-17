@@ -1,0 +1,84 @@
+<resources>
+    <string name="app_name">SmokeMate</string>
+    <string name="action_settings">Settings</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="lorem_ipsum">
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam in scelerisque sem. Mauris
+        volutpat, dolor id interdum ullamcorper, risus dolor egestas lectus, sit amet mattis purus
+        dui nec risus. Maecenas non sodales nisi, vel dictum dolor. Class aptent taciti sociosqu ad
+        litora torquent per conubia nostra, per inceptos himenaeos. Suspendisse blandit eleifend
+        diam, vel rutrum tellus vulputate quis. Aliquam eget libero aliquet, imperdiet nisl a,
+        ornare ex. Sed rhoncus est ut libero porta lobortis. Fusce in dictum tellus.\n\n
+        Suspendisse interdum ornare ante. Aliquam nec cursus lorem. Morbi id magna felis. Vivamus
+        egestas, est a condimentum egestas, turpis nisl iaculis ipsum, in dictum tellus dolor sed
+        neque. Morbi tellus erat, dapibus ut sem a, iaculis tincidunt dui. Interdum et malesuada
+        fames ac ante ipsum primis in faucibus. Curabitur et eros porttitor, ultricies urna vitae,
+        molestie nibh. Phasellus at commodo eros, non aliquet metus. Sed maximus nisl nec dolor
+        bibendum, vel congue leo egestas.\n\n
+        Sed interdum tortor nibh, in sagittis risus mollis quis. Curabitur mi odio, condimentum sit
+        amet auctor at, mollis non turpis. Nullam pretium libero vestibulum, finibus orci vel,
+        molestie quam. Fusce blandit tincidunt nulla, quis sollicitudin libero facilisis et. Integer
+        interdum nunc ligula, et fermentum metus hendrerit id. Vestibulum lectus felis, dictum at
+        lacinia sit amet, tristique id quam. Cras eu consequat dui. Suspendisse sodales nunc ligula,
+        in lobortis sem porta sed. Integer id ultrices magna, in luctus elit. Sed a pellentesque
+        est.\n\n
+        Aenean nunc velit, lacinia sed dolor sed, ultrices viverra nulla. Etiam a venenatis nibh.
+        Morbi laoreet, tortor sed facilisis varius, nibh orci rhoncus nulla, id elementum leo dui
+        non lorem. Nam mollis ipsum quis auctor varius. Quisque elementum eu libero sed commodo. In
+        eros nisl, imperdiet vel imperdiet et, scelerisque a mauris. Pellentesque varius ex nunc,
+        quis imperdiet eros placerat ac. Duis finibus orci et est auctor tincidunt. Sed non viverra
+        ipsum. Nunc quis augue egestas, cursus lorem at, molestie sem. Morbi a consectetur ipsum, a
+        placerat diam. Etiam vulputate dignissim convallis. Integer faucibus mauris sit amet finibus
+        convallis.\n\n
+        Phasellus in aliquet mi. Pellentesque habitant morbi tristique senectus et netus et
+        malesuada fames ac turpis egestas. In volutpat arcu ut felis sagittis, in finibus massa
+        gravida. Pellentesque id tellus orci. Integer dictum, lorem sed efficitur ullamcorper,
+        libero justo consectetur ipsum, in mollis nisl ex sed nisl. Donec maximus ullamcorper
+        sodales. Praesent bibendum rhoncus tellus nec feugiat. In a ornare nulla. Donec rhoncus
+        libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
+        vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
+    </string>
+    <string name="create_account">Criar conta</string>
+    <string name="login">Nome de usuário</string>
+    <string name="loginInput">nome de usuário</string>
+    <string name="password">senha</string>
+    <string name="forgotPassword">Esqueceu sua senha?</string>
+    <string name="date">Dia</string>
+    <string name="month">Mês</string>
+    <string name="date_of_birth">Data de nascimento:</string>
+    <string name="confirm_password">Confirmar senha</string>
+    <string name="loginRegistrationInput">Nome de usuário</string>
+    <string name="nextRegistration">Próximo</string>
+    <string name="passwordRegistrationInput">Senha</string>
+    <string name="iAlreadyHaveAccount">Já tenho uma conta</string>
+    <string name="year">Ano</string>
+    <string name="your_favorite_cigarrettes">Seus cigarros favoritos</string>
+    <string name="city">Cidade</string>
+    <string name="country">País</string>
+    <string name="name">Nome</string>
+    <string name="phone_number">Número de telefone</string>
+    <string name="nextRegistrationSecondButton">Próximo</string>
+    <string name="surname">Sobrenome</string>
+    <string name="selectLanguage">Selecionar idioma</string>
+    <string name="cofirmCode">Confirmar código</string>
+    <string name="confirmationCode">Código de confirmação</string>
+    <string name="ConfirmationDescription">O código foi enviado para o seu número de telefone, por favor insira-o no campo abaixo</string>
+    <string name="forgotPasswordDescription">Foi enviado um código para o seu telefone para recuperar a sua senha. Por favor, insira-o no campo abaixo</string>
+
+    <string-array name="languages">
+        <item>ENG</item>
+        <item>RUS</item>
+        <item>UKR</item>
+        <item>POL</item>
+        <item>SPA</item>
+        <item>POR</item>
+        <item>GER</item>
+        <item>FRA</item>
+        <item>ITA</item>
+    </string-array>
+</resources>

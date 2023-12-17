@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationLoginField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:hint="@string/loginRegistrationInput"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.258" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationPasswordField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/passwordRegistrationInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintTop_toBottomOf="@+id/registrationLoginField" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/registrationConfirmPasswordField"
+        android:layout_width="333dp"
+        android:layout_height="53dp"
+        android:layout_marginTop="12dp"
+        android:hint="@string/confirm_password"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintTop_toBottomOf="@+id/registrationPasswordField" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/yearField"
+        android:layout_width="124dp"
+        android:layout_height="53dp"
+        android:hint="@string/year"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.864"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/monthField"
+        android:layout_width="92dp"
+        android:layout_height="53dp"
+        android:hint="@string/month"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <com.google.android.material.textfield.TextInputEditText
+        android:id="@+id/dateField"
+        android:layout_width="92dp"
+        android:layout_height="53dp"
+        android:hint="@string/date"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.122"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
+        app:layout_constraintVertical_bias="0.571" />
+
+    <TextView
+        android:id="@+id/dateOfBirthText"
+        android:layout_width="171dp"
+        android:layout_height="29dp"
+        android:text="@string/date_of_birth"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.162"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.518" />
+
+    <Button
+        android:id="@+id/registrationNextButton"
+        android:layout_width="111dp"
+        android:layout_height="60dp"
+        android:text="@string/nextRegistration"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.673" />
+
+    <Button
+        android:id="@+id/registrationToLoginButton"
+        android:layout_width="209dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:text="@string/iAlreadyHaveAccount"
+        android:textColor="#6750A3"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.75" />
+</androidx.constraintlayout.widget.ConstraintLayout>
