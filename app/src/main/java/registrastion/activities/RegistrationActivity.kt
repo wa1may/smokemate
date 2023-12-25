@@ -23,7 +23,7 @@ class RegistrationActivity: AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-val registrationNextButton: android.widget.Button = findViewById(R.id.registrationNextButton)
+        val registrationNextButton: android.widget.Button = findViewById(R.id.registrationNextButton)
         val registrationToLoginButton: android.widget.Button = findViewById(R.id.registrationToLoginButton)
 
 
