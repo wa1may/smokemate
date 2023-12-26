@@ -7,6 +7,8 @@ import android.widget.EditText
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.example.smokemate.R
+import com.example.smokemate.areFieldsNotEmpty
+import com.example.smokemate.setRedBorderForEmptyFields
 
 class RegistrationSecondActivity : AppCompatActivity() {
 
@@ -31,69 +33,15 @@ class RegistrationSecondActivity : AppCompatActivity() {
         registrationCigaretteField = findViewById(R.id.registrationCigaretteField)
 
         registrationNextButton2.setOnClickListener {
-            if (areFieldsNotEmpty()) {
-                RegistrationDataHolder.userDetail = UserDetail(
-                    registrationNameField.text.toString().trim(),
-                    registrationSurnameField.text.toString().trim(),
-                    registrationPhoneNumberField.text.toString().trim(),
-                    registrationCountryField.text.toString().trim(),
-                    registrationCityField.text.toString().trim(),
-                    registrationCigaretteField.text.toString().trim()
-                )
+            if (registrationNameField.areFieldsNotEmpty() && registrationSurnameField.areFieldsNotEmpty() && registrationPhoneNumberField.areFieldsNotEmpty() && registrationCountryField.areFieldsNotEmpty() && registrationCityField.areFieldsNotEmpty() && registrationCigaretteField.areFieldsNotEmpty()) {
+/*Код для связи с бэкэндом*/
                 val intent = Intent(this, RegistrationConfirmActivity::class.java)
                 startActivity(intent)
-                setRedBorderForEmptyFields()
+                setRedBorderForEmptyFields(registrationNameField, registrationSurnameField, registrationPhoneNumberField, registrationCountryField, registrationCityField, registrationCigaretteField)
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-                setRedBorderForEmptyFields()
+                setRedBorderForEmptyFields(registrationNameField, registrationSurnameField, registrationPhoneNumberField, registrationCountryField, registrationCityField, registrationCigaretteField)
             }
-        }
-    }
-
-    private fun areFieldsNotEmpty(): Boolean {
-        return (registrationNameField.text.isNotEmpty() &&
-                registrationSurnameField.text.isNotEmpty() &&
-                registrationPhoneNumberField.text.isNotEmpty() &&
-                registrationCountryField.text.isNotEmpty() &&
-                registrationCityField.text.isNotEmpty() &&
-                registrationCigaretteField.text.isNotEmpty())
-    }
-
-    private fun setRedBorderForEmptyFields() {
-        if (registrationNameField.text.isEmpty()) {
-            registrationNameField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationNameField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationSurnameField.text.isEmpty()) {
-            registrationSurnameField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationSurnameField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationPhoneNumberField.text.isEmpty()) {
-            registrationPhoneNumberField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationPhoneNumberField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationCountryField.text.isEmpty()) {
-            registrationCountryField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationCountryField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationCityField.text.isEmpty()) {
-            registrationCityField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationCityField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationCigaretteField.text.isEmpty()) {
-            registrationCigaretteField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationCigaretteField.setBackgroundResource(R.drawable.textline)
         }
     }
 }

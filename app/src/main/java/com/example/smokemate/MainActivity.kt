@@ -2,15 +2,16 @@ package com.example.smokemate
 
 import android.content.Intent
 import android.os.Bundle
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
-import android.widget.EditText
 import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import forgot.password.activities.ForgotPasswordPhoneActivity
 import registrastion.activities.RegistrationActivity
 
-class MainActivity : AppCompatActivity() {
+
+class MainActivity: AppCompatActivity() {
 
     private lateinit var languageSelect: TextView
     private lateinit var loginField: EditText
@@ -32,13 +33,14 @@ class MainActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
 
-            if(areFieldsNotEmpty())
+            if(loginField.areFieldsNotEmpty() && passwordField.areFieldsNotEmpty())
             {
+                setRedBorderForEmptyFields(loginField, passwordField)
 /*Сделать свяь с базой данных*/
             }
             else
             {
-                setRedBorderForEmptyFields()
+                setRedBorderForEmptyFields(loginField, passwordField)
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
             }
         }
@@ -55,25 +57,6 @@ class MainActivity : AppCompatActivity() {
 
         languageSelect.setOnClickListener {
 /*Вызов функции из другого класса*/
-        }
-    }
-
-    private fun areFieldsNotEmpty(): Boolean {
-        return (loginField.text.isNotEmpty() &&
-                passwordField.text.isNotEmpty())
-    }
-
-    private fun setRedBorderForEmptyFields() {
-        if (loginField.text.isEmpty()) {
-            loginField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            loginField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (passwordField.text.isEmpty()) {
-            passwordField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            passwordField.setBackgroundResource(R.drawable.textline)
         }
     }
 }
