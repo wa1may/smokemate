@@ -4,61 +4,61 @@ import android.content.Context
 import android.content.DialogInterface
 import android.content.Intent
 import android.content.SharedPreferences
+import android.content.res.Configuration
 import android.os.Bundle
-import android.widget.TextView
+import android.view.View
+import android.widget.*
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
-import java.util.Locale
-import android.widget.EditText
-import android.widget.Button
-import android.widget.Toast
 import forgot.password.activities.ForgotPasswordPhoneActivity
 import registrastion.activities.RegistrationActivity
+import java.util.Locale
+
 
 class MainActivity : AppCompatActivity() {
 
-    private lateinit var LanguageSelect: TextView
-    private lateinit var editor: SharedPreferences.Editor
-    private lateinit var sharedPreferences: SharedPreferences
+    private lateinit var languageSelect: TextView
     private lateinit var loginField: EditText
     private lateinit var passwordField: EditText
     private lateinit var loginButton: Button
     private lateinit var resetPasswordButton: Button
-    private lateinit var db: DataBase
+    private lateinit var createAccountButton: Button
+    private lateinit var errorMessage: TextView
+    private lateinit var languageFlag: ImageView
+    private lateinit var editor: SharedPreferences.Editor
+    private lateinit var sharedPreferences: SharedPreferences
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration_main)
 
-        val CreateAccount: android.widget.Button = findViewById(R.id.CreateAccount)
         loginField = findViewById(R.id.loginField)
         passwordField = findViewById(R.id.passwordField)
         loginButton = findViewById(R.id.loginButton)
         resetPasswordButton = findViewById(R.id.resetPasswordButton)
-        db = DataBase(this)
+        createAccountButton = findViewById(R.id.createAccountButton)
+        languageSelect = findViewById(R.id.languageSelect)
+        errorMessage = findViewById(R.id.errorMessage)
+        languageFlag = findViewById(R.id.languageFlag)
 
-        CreateAccount.setOnClickListener {
-            val intent = Intent(this, RegistrationActivity::class.java)
-            startActivity(intent)
-        }
+        LoadLocal()
 
         loginButton.setOnClickListener {
-            val username = loginField.text.toString().trim()
-            val password = passwordField.text.toString().trim()
 
-            if(areFieldsNotEmpty())
-            {
-                if (db.authenticateUser(username, password)) {
-                Toast.makeText(this, "Вход выполнен успешно", Toast.LENGTH_SHORT).show()
-                } else {
-                Toast.makeText(this, "Неверные учетные данные", Toast.LENGTH_SHORT).show()
-                }
+            if (loginField.areFieldsNotEmpty() && passwordField.areFieldsNotEmpty()) {
+                setRedBorderForEmptyFields(loginField, passwordField)
+                errorMessage.text = " "
+                /*Сделать свяь с базой данных*/
+            } else {
+                setRedBorderForEmptyFields(loginField, passwordField)
+                errorMessage.text = "Будь ласка, заповніть всі поля"
             }
-            else
-            {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-            }
+        }
+
+        createAccountButton.setOnClickListener {
+            val intent = Intent(this, RegistrationActivity::class.java)
+            startActivity(intent)
         }
 
         resetPasswordButton.setOnClickListener {
@@ -66,17 +66,17 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        LoadLocal()
-
-        LanguageSelect = findViewById(R.id.LanguageSelect)
-
-        LanguageSelect.setOnClickListener {
+        languageSelect.setOnClickListener {
             openDialogforLanguageChange()
         }
     }
 
     private fun LoadLocal() {
         sharedPreferences = getSharedPreferences("Settings", Context.MODE_PRIVATE)
+        val selectedFlag = sharedPreferences.getInt("selected_flag", R.drawable.language_russian)
+        val selectedLanguage = sharedPreferences.getString("selected_language", "ru") // "ru" - язык по умолчанию
+        languageFlag.setImageResource(selectedFlag)
+        languageSelect.text = getLanguageName(selectedLanguage!!)
     }
 
     private fun openDialogforLanguageChange() {
@@ -89,33 +89,34 @@ class MainActivity : AppCompatActivity() {
         alertDialog.setSingleChoiceItems(list, -1, DialogInterface.OnClickListener { dialog, i ->
 
             if (i == 0) {
-                setLocal("en")
+                setLocal("en", R.drawable.language_english)
                 recreate()
             } else if (i == 1) {
-                setLocal("es")
+                setLocal("es", R.drawable.language_spanish)
                 recreate()
             } else if (i == 2) {
-                setLocal("fr")
+                setLocal("fr", R.drawable.language_french)
                 recreate()
             } else if (i == 3) {
-            setLocal("de")
-            recreate()
-        } else if (i == 4) {
-            setLocal("it")
-            recreate()
-        } else if (i == 5) {
-            setLocal("pl")
-            recreate()
-        } else if (i == 6) {
-                setLocal("pt")
+                setLocal("de", R.drawable.language_german)
+                recreate()
+            } else if (i == 4) {
+                setLocal("it", R.drawable.language_italian)
+                recreate()
+            } else if (i == 5) {
+                setLocal("pl", R.drawable.language_polish)
+                recreate()
+            } else if (i == 6) {
+                setLocal("pt", R.drawable.language_portuguese)
                 recreate()
             } else if (i == 7) {
-                setLocal("ru")
+                setLocal("ru", R.drawable.language_russian)
                 recreate()
             } else if (i == 8) {
-                setLocal("uk")
+                setLocal("uk", R.drawable.language_ukrainian)
                 recreate()
             }
+
             dialog.dismiss()
         })
 
@@ -125,10 +126,11 @@ class MainActivity : AppCompatActivity() {
 
         val mDialog = alertDialog.create()
 
+        languageSelect.text = getLanguageName(sharedPreferences.getString("selected_language", "ru")!!)
         mDialog.show()
     }
 
-    private fun setLocal(language: String) {
+    private fun setLocal(language: String, flagResourceId: Int) {
         val local = Locale(language)
         Locale.setDefault(local)
         val config = resources.configuration
@@ -137,11 +139,24 @@ class MainActivity : AppCompatActivity() {
 
         editor = getSharedPreferences("Settings", Context.MODE_PRIVATE).edit()
         editor.putString("selected_language", language)
+        editor.putInt("selected_flag", flagResourceId)
         editor.apply()
+
+        languageFlag.setImageResource(flagResourceId)
     }
 
-    private fun areFieldsNotEmpty(): Boolean {
-        return (loginField.text.isNotEmpty() &&
-                passwordField.text.isNotEmpty())
+    private fun getLanguageName(language: String): String {
+        when (language) {
+            "en" -> return "English"
+            "es" -> return "Español"
+            "fr" -> return "Français"
+            "de" -> return "Deutsch"
+            "it" -> return "Italiano"
+            "pl" -> return "Polski"
+            "pt" -> return "Português"
+            "ru" -> return "Русский"
+            "uk" -> return "Українська"
+            else -> return "Unknown"
+        }
     }
 }

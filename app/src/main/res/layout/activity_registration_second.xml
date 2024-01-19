@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/errorMessage4"
+        android:layout_width="250dp"
+        android:layout_height="20dp"
+        android:textColor="#A30000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.242"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.604" />
+
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/registrationCityField"
         android:layout_width="333dp"
@@ -45,12 +58,12 @@
         android:id="@+id/registrationSurnameField"
         android:layout_width="333dp"
         android:layout_height="53dp"
+        android:background="@drawable/textline"
         android:hint="@string/surname"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/textline"
         app:layout_constraintVertical_bias="0.237" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -81,11 +94,44 @@
         android:id="@+id/registrationNextButton2"
         android:layout_width="111dp"
         android:layout_height="60dp"
+        android:backgroundTint="#4A1716"
+        android:radius="47dp"
         android:text="@string/nextRegistrationSecondButton"
+        android:textColorHighlight="#3A1211"
+        android:textColorLink="#3A1211"
+        android:textSize="20sp"
+        app:cornerRadius="47px"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.625" />
+        app:layout_constraintVertical_bias="0.664" />
+
+    <Button
+        android:id="@+id/previousButton"
+        android:layout_width="209dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:text="Назад"
+        android:textColor="#4A1716"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.74" />
+
+    <Spinner
+        android:id="@+id/genderSpinner"
+        android:layout_width="125dp"
+        android:layout_height="40dp"
+        android:entries="@array/gender_array"
+        android:prompt="@string/select_gender_prompt"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.11"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.570" />
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

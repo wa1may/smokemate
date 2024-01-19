@@ -2,81 +2,120 @@ package registrastion.activities
 
 import android.content.Intent
 import android.os.Bundle
+import android.widget.Button
 import androidx.appcompat.app.AppCompatActivity
 import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import com.example.smokemate.MainActivity
 import com.example.smokemate.R
-import java.text.SimpleDateFormat
 import java.util.*
+import com.example.smokemate.areFieldsNotEmpty
+import com.example.smokemate.setRedBorderForEmptyFields
+import android.app.Dialog
+import android.widget.NumberPicker
+import android.graphics.Color
 
 class RegistrationActivity: AppCompatActivity() {
 
     private lateinit var registrationLoginField: EditText
     private lateinit var registrationPasswordField: EditText
     private lateinit var registrationConfirmPasswordField: EditText
-    private lateinit var yearField: EditText
-    private lateinit var monthField: EditText
-    private lateinit var dateField: EditText
+    private lateinit var regNextButton: Button
+    private lateinit var regToLoginButton: Button
+    private lateinit var dateOfBirthSelector: TextView
+    private lateinit var errorMessage2: TextView
+    private lateinit var errorMessage3: TextView
+    private var selectedDate: String = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_registration)
 
-val registrationNextButton: android.widget.Button = findViewById(R.id.registrationNextButton)
-        val registrationToLoginButton: android.widget.Button = findViewById(R.id.registrationToLoginButton)
-
-
-
+        regNextButton = findViewById(R.id.regNextButton)
+        regToLoginButton = findViewById(R.id.regToLoginButton)
+        dateOfBirthSelector = findViewById(R.id.dateOfBirthSelector)
         registrationLoginField = findViewById(R.id.registrationLoginField)
         registrationPasswordField = findViewById(R.id.registrationPasswordField)
         registrationConfirmPasswordField = findViewById(R.id.registrationConfirmPasswordField)
-        dateField = findViewById(R.id.dateField)
-        monthField = findViewById(R.id.monthField)
-        yearField = findViewById(R.id.yearField)
+        errorMessage2 = findViewById(R.id.errorMessage2)
+        errorMessage3 = findViewById(R.id.errorMessage3)
 
-        registrationNextButton.setOnClickListener {
-            if (areFieldsNotEmpty()) {
-                setRedBorderForEmptyFields()
-                if(arePasswordsMatching()) {
-                    if (isOver18()) {
-                        RegistrationDataHolder.userData = UserData(
-                            registrationLoginField.text.toString().trim(),
-                            registrationPasswordField.text.toString().trim(),
-                            dateField.text.toString().trim(),
-                            monthField.text.toString().trim(),
-                            yearField.text.toString().trim()
-                        )
-                        val intent = Intent(this, RegistrationSecondActivity::class.java)
-                        startActivity(intent)
-                    } else {
-                        Toast.makeText(this, "You must be over 18", Toast.LENGTH_SHORT).show()
-                    }
+        regNextButton.setOnClickListener {
+            if (registrationLoginField.areFieldsNotEmpty() && registrationPasswordField.areFieldsNotEmpty() && registrationConfirmPasswordField.areFieldsNotEmpty() &&  arePasswordsMatching()) {
+                setRedBorderForEmptyFields(registrationLoginField, registrationPasswordField, registrationConfirmPasswordField)
+                errorMessage2.text = " "
+                if(isOver18())
+                {
+                    /*Фунция для сохранении информации во временное хранилище*/
+                    val intent = Intent(this, RegistrationSecondActivity::class.java)
+                    startActivity(intent)
+                    errorMessage3.text = " "
                 } else {
-                    Toast.makeText(this, "Passwords don't match", Toast.LENGTH_SHORT).show()
-
+                    errorMessage3.text = "Будь ласка, вкажіть правильний вік"
                 }
+
             } else {
                 Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
-                setRedBorderForEmptyFields()
-            }
+                setRedBorderForEmptyFields(registrationLoginField, registrationPasswordField, registrationConfirmPasswordField)
+                errorMessage2.text = "Будь ласка, заповніть всі поля"
+           }
         }
 
-        registrationToLoginButton.setOnClickListener {
+        regToLoginButton.setOnClickListener {
 
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
         }
 
+        dateOfBirthSelector.setOnClickListener {
+            showDatePickerDialog()
+        }
+
     }
 
 
-private fun areFieldsNotEmpty(): Boolean {
-        return (registrationLoginField.text.isNotEmpty() &&
-                registrationPasswordField.text.isNotEmpty() &&
-                dateField.text.isNotEmpty() &&
-                monthField.text.isNotEmpty() &&
-                yearField.text.isNotEmpty())
+    private fun showDatePickerDialog() {
+        val dialog = Dialog(this)
+        dialog.setContentView(R.layout.dialog_date_picker)
+        dialog.setTitle("Выберите дату")
+
+        val yearPicker = dialog.findViewById<NumberPicker>(R.id.yearPicker)
+        val monthPicker = dialog.findViewById<NumberPicker>(R.id.monthPicker)
+        val dayPicker = dialog.findViewById<NumberPicker>(R.id.dayPicker)
+        val okButton = dialog.findViewById<Button>(R.id.okButton)
+        val cancelButton = dialog.findViewById<Button>(R.id.cancelButton)
+
+
+        val currentDate = Calendar.getInstance()
+        val currentYear = currentDate.get(Calendar.YEAR)
+        val currentMonth = currentDate.get(Calendar.MONTH)
+        val currentDay = currentDate.get(Calendar.DAY_OF_MONTH)
+        yearPicker.minValue = currentYear - 100
+        yearPicker.maxValue = currentYear + 100
+        monthPicker.minValue = 1
+        monthPicker.maxValue = 12
+        dayPicker.minValue = 1
+        dayPicker.maxValue = currentDate.getActualMaximum(Calendar.DAY_OF_MONTH)
+
+        yearPicker.value = currentYear
+        monthPicker.value = currentMonth + 1
+        dayPicker.value = currentDay
+
+
+
+        okButton.setOnClickListener {
+            selectedDate = "${yearPicker.value}-${monthPicker.value}-${dayPicker.value}"
+            dateOfBirthSelector.text = selectedDate
+            dateOfBirthSelector.setTextColor(Color.BLACK)
+            dialog.dismiss()
+        }
+
+        cancelButton.setOnClickListener {
+            dialog.dismiss()
+        }
+
+        dialog.show()
     }
 
     private fun arePasswordsMatching(): Boolean {
@@ -85,11 +124,11 @@ private fun areFieldsNotEmpty(): Boolean {
 
     private fun isOver18(): Boolean {
         val currentDate = Calendar.getInstance()
-        val sdf = SimpleDateFormat("dd-MM-yyyy", Locale.getDefault())
 
-        val day = dateField.text.toString().toInt()
-        val month = monthField.text.toString().toInt() - 1
-        val year = yearField.text.toString().toInt()
+        val selectedDateParts = selectedDate.split("-")
+        val day = selectedDateParts[2].toInt()
+        val month = selectedDateParts[1].toInt() - 1
+        val year = selectedDateParts[0].toInt()
 
         val birthDate = Calendar.getInstance()
         birthDate.set(year, month, day)
@@ -100,43 +139,5 @@ private fun areFieldsNotEmpty(): Boolean {
         }
 
         return age >= 18
-    }
-
-    private fun setRedBorderForEmptyFields() {
-        if (registrationLoginField.text.isEmpty()) {
-            registrationLoginField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationLoginField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationPasswordField.text.isEmpty()) {
-            registrationPasswordField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationPasswordField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (registrationConfirmPasswordField.text.isEmpty()) {
-            registrationConfirmPasswordField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            registrationConfirmPasswordField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (dateField.text.isEmpty()) {
-            dateField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            dateField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (monthField.text.isEmpty()) {
-            monthField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            monthField.setBackgroundResource(R.drawable.textline)
-        }
-
-        if (yearField.text.isEmpty()) {
-            yearField.setBackgroundResource(R.drawable.textline_error)
-        } else {
-            yearField.setBackgroundResource(R.drawable.textline)
-        }
     }
 }

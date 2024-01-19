@@ -69,6 +69,13 @@
     <string name="confirmationCode">Confirmation code</string>
     <string name="ConfirmationDescription">The code has been sent to your phone number, please enter it in the field below</string>
     <string name="forgotPasswordDescription">A code to recover your password has been sent to your phone. Please enter the code in the field below</string>
+    <string-array name="gender_array">
+        <item>Male</item>
+        <item>Female</item>
+        <item>Other</item>
+    </string-array>
+
+    <string name="select_gender_prompt">Select Gender</string>
 
     <string-array name="languages">
         <item>ENG</item>

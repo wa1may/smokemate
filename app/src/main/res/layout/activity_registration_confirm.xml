@@ -5,6 +5,19 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+    <TextView
+        android:id="@+id/errorMessage5"
+        android:layout_width="343dp"
+        android:layout_height="20dp"
+        android:textColor="#A30000"
+        android:textSize="12sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.514"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.562" />
+
     <Button
         android:id="@+id/confirmButton"
         android:layout_width="247dp"
@@ -14,7 +27,13 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.636" />
+        app:layout_constraintVertical_bias="0.636"
+        android:backgroundTint="#4A1716"
+        android:textColorHighlight="#3A1211"
+        android:textColorLink="#3A1211"
+        android:radius="47dp"
+        app:cornerRadius="47px"
+        android:textSize="20sp"/>
 
     <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/confirmationCodeInput"
@@ -26,6 +45,7 @@
         app:layout_constraintHorizontal_bias="0.507"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        android:background="@drawable/textline"
         app:layout_constraintVertical_bias="0.918" />
 
     <TextView
@@ -38,5 +58,31 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.976" />
+
+    <Button
+        android:id="@+id/previousButton2"
+        android:layout_width="209dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:text="Назад"
+        android:textColor="#4A1716"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.788" />
+
+    <Button
+        android:id="@+id/resendCodeButton"
+        android:layout_width="209dp"
+        android:layout_height="60dp"
+        android:background="@android:color/transparent"
+        android:text="Отправить код снова"
+        android:textColor="#4A1716"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.713" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
