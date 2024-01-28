@@ -4,7 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">
@@ -43,42 +42,45 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="create_account">Konto erstellen</string>
-    <string name="login">Benutzername</string>
-    <string name="loginInput">Benutzername</string>
+    <string name="langSelect">Deutsch</string>
+    <string name="loginTextline">Benutzername</string>
+    <string name="login">Anmelden</string>
     <string name="password">Passwort</string>
-    <string name="forgotPassword">Passwort vergessen?</string>
-    <string name="date">Tag</string>
-    <string name="month">Monat</string>
-    <string name="date_of_birth">Geburtsdatum:</string>
-    <string name="confirm_password">Passwort bestätigen</string>
-    <string name="loginRegistrationInput">Benutzername</string>
-    <string name="nextRegistration">Weiter</string>
-    <string name="passwordRegistrationInput">Passwort</string>
-    <string name="iAlreadyHaveAccount">Ich habe bereits ein Konto</string>
-    <string name="year">Jahr</string>
-    <string name="your_favorite_cigarrettes">Ihre Lieblingszigaretten</string>
-    <string name="city">Stadt</string>
-    <string name="country">Land</string>
-    <string name="name">Name</string>
-    <string name="phone_number">Telefonnummer</string>
-    <string name="nextRegistrationSecondButton">Weiter</string>
-    <string name="surname">Nachname</string>
-    <string name="selectLanguage">Sprache auswählen</string>
-    <string name="cofirmCode">Code bestätigen</string>
-    <string name="confirmationCode">Bestätigungscode</string>
-    <string name="ConfirmationDescription">Der Code wurde an Ihre Telefonnummer gesendet. Bitte geben Sie ihn im unten stehenden Feld ein</string>
-    <string name="forgotPasswordDescription">Ein Code zur Wiederherstellung Ihres Passworts wurde an Ihr Telefon gesendet. Bitte geben Sie den Code im Feld unten ein</string>
+    <string name="confirmPassword">Passwort bestätigen</string>
+    <string name="createAccount">Konto erstellen</string>
+    <string name="resetPassword">Passwort zurücksetzen</string>
+    <string name="dateOfBirthText">Geburtsdatum:</string>
+    <string name="dateOfBirthSelector">Geburtsdatum auswählen</string>
+    <string name="next">Weiter</string>
+    <string name="haveAccount">Ich habe bereits ein Konto</string>
 
-    <string-array name="languages">
-        <item>ENG</item>
-        <item>RUS</item>
-        <item>UKR</item>
-        <item>POL</item>
-        <item>SPA</item>
-        <item>POR</item>
-        <item>GER</item>
-        <item>FRA</item>
-        <item>ITA</item>
+    <string name="name">Name</string>
+    <string name="surname">Nachname</string>
+    <string name="phoneNumber">Telefonnummer</string>
+    <string name="country">Land</string>
+    <string name="city">Stadt</string>
+    <string name="cigarettes">Ihre Lieblingszigaretten</string>
+
+    <string-array name="gender_array">
+        <item>Männlich</item>
+        <item>Weiblich</item>
+        <item>Andere</item>
     </string-array>
+
+    <string name="select_gender_prompt">Geschlecht auswählen</string>
+    <string name="back">Zurück</string>
+    <string name="confirmRegDesc">Der Bestätigungscode wurde an Ihre Telefonnummer gesendet. Bitte geben Sie den Code im folgenden Feld ein.\n\n\n\n\n\n\n</string>
+    <string name="confirmCode">Bestätigungscode</string>
+    <string name="confirm">Bestätigen</string>
+    <string name="resendCode">Code erneut senden</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Abbrechen</string>
+    <string name="phoneNumberDesc">Bitte geben Sie die Telefonnummer an, die mit Ihrem Konto verknüpft ist.</string>
+    <string name="forgotPasswordConfirmDesc">Der Bestätigungscode für das Zurücksetzen des Passworts wurde an Ihre Telefonnummer gesendet. Bitte geben Sie den Code im folgenden Feld ein.</string>
+    <string name="newPassword">Neues Passwort</string>
+    <string name="confirmNewPassword">Neues Passwort bestätigen</string>
+
+    <string name="emptyFields">Bitte füllen Sie alle Felder aus.</string>
+    <string name="wrongCode">Der eingegebene Code ist falsch. Bitte versuchen Sie es erneut.</string>
+    <string name="wrongAge">Das eingegebene Alter ist ungültig. Sie müssen über 18 Jahre alt sein.</string>
 </resources>

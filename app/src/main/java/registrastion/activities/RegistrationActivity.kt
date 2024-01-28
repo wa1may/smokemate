@@ -52,13 +52,12 @@ class RegistrationActivity: AppCompatActivity() {
                     startActivity(intent)
                     errorMessage3.text = " "
                 } else {
-                    errorMessage3.text = "Будь ласка, вкажіть правильний вік"
+                    errorMessage3.text = getString(R.string.wrongAge)
                 }
 
             } else {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 setRedBorderForEmptyFields(registrationLoginField, registrationPasswordField, registrationConfirmPasswordField)
-                errorMessage2.text = "Будь ласка, заповніть всі поля"
+                errorMessage2.text = getString(R.string.emptyFields)
            }
         }
 

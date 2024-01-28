@@ -46,11 +46,11 @@ class RegistrationConfirmActivity: AppCompatActivity() {
                     /*Фунцкия записи текста из строк в базу данных*/
                     errorMessage5.text = " "
                 } else {
-                    errorMessage5.text = "Введений код невірний. Будь ласка, спробуйте знову"
+                    errorMessage5.text = getString(R.string.wrongCode)
                 }
             } else {
                 setRedBorderForEmptyFields(confirmationCodeInput)
-                errorMessage5.text = "Будь ласка, заповніть всі поля"
+                errorMessage5.text = getString(R.string.emptyFields)
             }
         }
 

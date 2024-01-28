@@ -59,9 +59,8 @@ class RegistrationSecondActivity : AppCompatActivity() {
                 setRedBorderForEmptyFields(registrationNameField, registrationSurnameField, registrationPhoneNumberField, registrationCountryField, registrationCityField, registrationCigaretteField)
                 errorMessage4.text = " "
             } else {
-                Toast.makeText(this, "Please fill in all fields", Toast.LENGTH_SHORT).show()
                 setRedBorderForEmptyFields(registrationNameField, registrationSurnameField, registrationPhoneNumberField, registrationCountryField, registrationCityField, registrationCigaretteField)
-                errorMessage4.text = "Будь ласка, заповніть всі поля"
+                errorMessage4.text = getString(R.string.emptyFields)
             }
         }
 

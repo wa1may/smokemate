@@ -52,7 +52,7 @@
             android:layout_weight="1"
             android:backgroundTint="#4A1716"
             android:radius="47dp"
-            android:text="OK"
+            android:text="@string/ok"
             android:textColorHighlight="#3A1211"
             android:textColorLink="#3A1211"
             android:textSize="20sp"
@@ -61,15 +61,15 @@
         <Button
             android:id="@+id/cancelButton"
             android:layout_width="0dp"
-            android:layout_weight="1"
             android:layout_height="wrap_content"
-            android:text="Отмена"
             android:layout_marginLeft="4dp"
+            android:layout_weight="1"
             android:backgroundTint="#4A1716"
+            android:radius="47dp"
+            android:text="@string/cancel"
             android:textColorHighlight="#3A1211"
             android:textColorLink="#3A1211"
-            android:radius="47dp"
-            app:cornerRadius="47px"
-            android:textSize="20sp"/>
+            android:textSize="20sp"
+            app:cornerRadius="47px" />
     </LinearLayout>
 </LinearLayout>

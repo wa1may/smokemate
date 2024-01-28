@@ -4,7 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">
@@ -43,42 +42,45 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="create_account">Utwórz konto</string>
-    <string name="login">Login</string>
-    <string name="loginInput">login</string>
-    <string name="password">hasło</string>
-    <string name="forgotPassword">Zapomniałeś hasła?</string>
-    <string name="date">Dzień</string>
-    <string name="month">Miesiąc</string>
-    <string name="date_of_birth">Data urodzenia:</string>
-    <string name="confirm_password">Potwierdź hasło</string>
-    <string name="loginRegistrationInput">Login</string>
-    <string name="nextRegistration">Dalej</string>
-    <string name="passwordRegistrationInput">Hasło</string>
-    <string name="iAlreadyHaveAccount">Już mam konto</string>
-    <string name="year">Rok</string>
-    <string name="your_favorite_cigarrettes">Twoje ulubione papierosy</string>
-    <string name="city">Miasto</string>
-    <string name="country">Kraj</string>
-    <string name="name">Imię</string>
-    <string name="phone_number">Numer telefonu</string>
-    <string name="nextRegistrationSecondButton">Dalej</string>
-    <string name="surname">Nazwisko</string>
-    <string name="selectLanguage">Wybierz język</string>
-    <string name="cofirmCode">Potwierdź kod</string>
-    <string name="confirmationCode">Kod potwierdzenia</string>
-    <string name="ConfirmationDescription">Kod został wysłany na twój numer telefonu, proszę wprowadź go w poniższym polu</string>
-    <string name="forgotPasswordDescription">Na Twój telefon został wysłany kod do odzyskania hasła. Proszę wprowadź kod w poniższym polu</string>
+    <string name="langSelect">Polski</string>
+    <string name="loginTextline">Nazwa użytkownika</string>
+    <string name="login">Zaloguj się</string>
+    <string name="password">Hasło</string>
+    <string name="confirmPassword">Potwierdź hasło</string>
+    <string name="createAccount">Utwórz konto</string>
+    <string name="resetPassword">Zresetuj hasło</string>
+    <string name="dateOfBirthText">Data urodzenia:</string>
+    <string name="dateOfBirthSelector">Wybierz datę urodzenia</string>
+    <string name="next">Dalej</string>
+    <string name="haveAccount">Posiadam już konto</string>
 
-    <string-array name="languages">
-        <item>ENG</item>
-        <item>RUS</item>
-        <item>UKR</item>
-        <item>POL</item>
-        <item>SPA</item>
-        <item>POR</item>
-        <item>GER</item>
-        <item>FRA</item>
-        <item>ITA</item>
+    <string name="name">Imię</string>
+    <string name="surname">Nazwisko</string>
+    <string name="phoneNumber">Numer telefonu</string>
+    <string name="country">Kraj</string>
+    <string name="city">Miasto</string>
+    <string name="cigarettes">Twoje ulubione papierosy</string>
+
+    <string-array name="gender_array">
+        <item>Mężczyzna</item>
+        <item>Kobieta</item>
+        <item>Inne</item>
     </string-array>
+
+    <string name="select_gender_prompt">Wybierz płeć</string>
+    <string name="back">Wróć</string>
+    <string name="confirmRegDesc">Kod potwierdzenia został wysłany na Twój numer telefonu. Proszę wprowadzić kod w poniższym polu.\n\n\n\n\n\n\n</string>
+    <string name="confirmCode">Kod potwierdzenia</string>
+    <string name="confirm">Potwierdź</string>
+    <string name="resendCode">Wyślij kod ponownie</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Anuluj</string>
+    <string name="phoneNumberDesc">Podaj numer telefonu powiązany z Twoim kontem.</string>
+    <string name="forgotPasswordConfirmDesc">Kod potwierdzenia resetowania hasła został wysłany na Twój numer telefonu. Proszę wprowadzić kod w poniższym polu.</string>
+    <string name="newPassword">Nowe hasło</string>
+    <string name="confirmNewPassword">Potwierdź nowe hasło</string>
+
+    <string name="emptyFields">Proszę wypełnić wszystkie pola.</string>
+    <string name="wrongCode">Wprowadzony kod jest nieprawidłowy. Spróbuj ponownie.</string>
+    <string name="wrongAge">Wprowadzony wiek nie jest prawidłowy. Musisz mieć ponad 18 lat.</string>
 </resources>

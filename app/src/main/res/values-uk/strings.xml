@@ -4,7 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">
@@ -43,42 +42,45 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="create_account">Створити обліковий запис</string>
-    <string name="login">Логін</string>
-    <string name="loginInput">логін</string>
-    <string name="password">пароль</string>
-    <string name="forgotPassword">Забули пароль?</string>
-    <string name="date">День</string>
-    <string name="month">Місяць</string>
-    <string name="date_of_birth">Дата народження:</string>
-    <string name="confirm_password">Підтвердіть пароль</string>
-    <string name="loginRegistrationInput">Логін</string>
-    <string name="nextRegistration">Далі</string>
-    <string name="passwordRegistrationInput">Пароль</string>
-    <string name="iAlreadyHaveAccount">У мене вже є обліковий запис</string>
-    <string name="year">Рік</string>
-    <string name="your_favorite_cigarrettes">Ваші улюблені сигарети</string>
-    <string name="city">Місто</string>
-    <string name="country">Країна</string>
-    <string name="name">Ім я</string>
-    <string name="phone_number">Номер телефону</string>
-    <string name="nextRegistrationSecondButton">Далі</string>
-    <string name="surname">Прізвище</string>
-    <string name="selectLanguage">Виберіть мову</string>
-    <string name="cofirmCode">Підтвердити код</string>
-    <string name="confirmationCode">Код підтвердження</string>
-    <string name="ConfirmationDescription">Код відправлено на ваш номер телефону, будь ласка, введіть його в поле нижче</string>
-    <string name="forgotPasswordDescription">На ваш телефон відправлено код для відновлення пароля. Будь ласка, введіть код в поле нижче</string>
+    <string name="langSelect">Українська</string>
+    <string name="loginTextline">Ім\'я користувача</string>
+    <string name="login">Увійти</string>
+    <string name="password">Пароль</string>
+    <string name="confirmPassword">Підтвердити пароль</string>
+    <string name="createAccount">Створити обліковий запис</string>
+    <string name="resetPassword">Скинути пароль</string>
+    <string name="dateOfBirthText">Дата народження:</string>
+    <string name="dateOfBirthSelector">Виберіть дату народження</string>
+    <string name="next">Далі</string>
+    <string name="haveAccount">У мене вже є обліковий запис</string>
 
-    <string-array name="languages">
-        <item>ENG</item>
-        <item>RUS</item>
-        <item>UKR</item>
-        <item>POL</item>
-        <item>SPA</item>
-        <item>POR</item>
-        <item>GER</item>
-        <item>FRA</item>
-        <item>ITA</item>
+    <string name="name">Ім\'я</string>
+    <string name="surname">Прізвище</string>
+    <string name="phoneNumber">Номер телефону</string>
+    <string name="country">Країна</string>
+    <string name="city">Місто</string>
+    <string name="cigarettes">Ваші улюблені сигарети</string>
+
+    <string-array name="gender_array">
+        <item>Чоловіча</item>
+        <item>Жіноча</item>
+        <item>Інше</item>
     </string-array>
+
+    <string name="select_gender_prompt">Виберіть стать</string>
+    <string name="back">Назад</string>
+    <string name="confirmRegDesc">Код підтвердження був відправлений на ваш номер телефону. Будь ласка, введіть код в поле нижче.\n\n\n\n\n\n\n</string>
+    <string name="confirmCode">Код підтвердження</string>
+    <string name="confirm">Підтвердити</string>
+    <string name="resendCode">Надіслати код ще раз</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Скасувати</string>
+    <string name="phoneNumberDesc">Будь ласка, вкажіть номер телефону, пов\'язаний з вашим обліковим записом.</string>
+    <string name="forgotPasswordConfirmDesc">Код підтвердження скидання пароля був відправлений на ваш номер телефону. Будь ласка, введіть код в поле нижче.</string>
+    <string name="newPassword">Новий пароль</string>
+    <string name="confirmNewPassword">Підтвердіть новий пароль</string>
+
+    <string name="emptyFields">Будь ласка, заповніть всі поля.</string>
+    <string name="wrongCode">Введений код невірний. Будь ласка, спробуйте ще раз.</string>
+    <string name="wrongAge">Введений вік не є дійсним. Ви повинні бути старше 18 років.</string>
 </resources>

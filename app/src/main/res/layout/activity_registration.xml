@@ -53,7 +53,7 @@
         android:layout_width="333dp"
         android:layout_height="53dp"
         android:background="@drawable/textline"
-        android:hint="@string/loginRegistrationInput"
+        android:hint="@string/login"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -65,10 +65,10 @@
         android:layout_width="333dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
-        android:hint="@string/passwordRegistrationInput"
+        android:background="@drawable/textline"
+        android:hint="@string/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/textline"
         app:layout_constraintTop_toBottomOf="@+id/registrationLoginField" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -76,30 +76,31 @@
         android:layout_width="333dp"
         android:layout_height="53dp"
         android:layout_marginTop="12dp"
-        android:hint="@string/confirm_password"
+        android:background="@drawable/textline"
+        android:hint="@string/confirmPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        android:background="@drawable/textline"
         app:layout_constraintTop_toBottomOf="@+id/registrationPasswordField" />
 
     <TextView
         android:id="@+id/dateOfBirthText"
         android:layout_width="171dp"
         android:layout_height="29dp"
-        android:text="@string/date_of_birth"
+        android:text="@string/dateOfBirthText"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.162"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="TextSizeCheck" />
 
     <Button
         android:id="@+id/regToLoginButton"
         android:layout_width="209dp"
         android:layout_height="60dp"
         android:background="@android:color/transparent"
-        android:text="@string/iAlreadyHaveAccount"
+        android:text="@string/haveAccount"
         android:textColor="#4A1716"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -111,7 +112,7 @@
         android:id="@+id/dateOfBirthSelector"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:text="Select date of birth"
+        android:text="@string/dateOfBirthSelector"
         android:textColor="#A8A5A8"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"

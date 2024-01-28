@@ -36,7 +36,7 @@ class ForgotPasswordPhoneActivity: AppCompatActivity()  {
                 startActivity(intent)
                 errorMessage6.text = " "
             } else {
-                errorMessage6.text = "Будь ласка, заповніть всі поля"
+                errorMessage6.text = getString(R.string.emptyFields)
                 setRedBorderForEmptyFields(forgotPasswordPhoneInput)
             }
         }

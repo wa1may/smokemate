@@ -46,11 +46,11 @@ class ForgotPasswordConfirmActivity: AppCompatActivity() {
                     /*Фунцкия записи текста из строк в базу данных*/
                     errorMessage7.text = " "
                 } else {
-                    errorMessage7.text = "Введений код невірний. Будь ласка, спробуйте знову"
+                    errorMessage7.text = getString(R.string.wrongCode)
                 }
             } else {
                 setRedBorderForEmptyFields(forgotPasswordCodeInput)
-                errorMessage7.text = "Будь ласка, заповніть всі поля"
+                errorMessage7.text = getString(R.string.emptyFields)
             }
         }
 

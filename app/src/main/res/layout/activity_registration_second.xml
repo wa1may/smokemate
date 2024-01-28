@@ -34,12 +34,12 @@
         android:id="@+id/registrationCigaretteField"
         android:layout_width="333dp"
         android:layout_height="53dp"
-        android:hint="@string/your_favorite_cigarrettes"
+        android:background="@drawable/textline"
+        android:hint="@string/cigarettes"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/textline"
         app:layout_constraintVertical_bias="0.501" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -70,12 +70,12 @@
         android:id="@+id/registrationPhoneNumberField"
         android:layout_width="333dp"
         android:layout_height="53dp"
-        android:hint="@string/phone_number"
+        android:background="@drawable/textline"
+        android:hint="@string/phoneNumber"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:background="@drawable/textline"
         app:layout_constraintVertical_bias="0.305" />
 
     <com.google.android.material.textfield.TextInputEditText
@@ -96,7 +96,7 @@
         android:layout_height="60dp"
         android:backgroundTint="#4A1716"
         android:radius="47dp"
-        android:text="@string/nextRegistrationSecondButton"
+        android:text="@string/next"
         android:textColorHighlight="#3A1211"
         android:textColorLink="#3A1211"
         android:textSize="20sp"
@@ -112,7 +112,7 @@
         android:layout_width="209dp"
         android:layout_height="60dp"
         android:background="@android:color/transparent"
-        android:text="Назад"
+        android:text="@string/back"
         android:textColor="#4A1716"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

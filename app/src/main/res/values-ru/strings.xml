@@ -4,7 +4,6 @@
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
     <string name="second_fragment_label">Second Fragment</string>
-    <string name="next">Next</string>
     <string name="previous">Previous</string>
 
     <string name="lorem_ipsum">
@@ -43,42 +42,45 @@
         libero vel nunc consequat, quis tincidunt nisl eleifend. Cras bibendum enim a justo luctus
         vestibulum. Fusce dictum libero quis erat maximus, vitae volutpat diam dignissim.
     </string>
-    <string name="create_account">Создать аккаунт</string>
-    <string name="login">Логин</string>
-    <string name="loginInput">логин</string>
-    <string name="password">пароль</string>
-    <string name="forgotPassword">Забыли пароль?</string>
-    <string name="date">День</string>
-    <string name="month">Месяц</string>
-    <string name="date_of_birth">Дата рождения:</string>
-    <string name="confirm_password">Подтвердите пароль</string>
-    <string name="loginRegistrationInput">Логин</string>
-    <string name="nextRegistration">Далее</string>
-    <string name="passwordRegistrationInput">Пароль</string>
-    <string name="iAlreadyHaveAccount">У меня уже есть аккаунт</string>
-    <string name="year">Год</string>
-    <string name="your_favorite_cigarrettes">Ваши любимые сигареты</string>
-    <string name="city">Город</string>
-    <string name="country">Страна</string>
-    <string name="name">Имя</string>
-    <string name="phone_number">Номер телефона</string>
-    <string name="nextRegistrationSecondButton">Далее</string>
-    <string name="surname">Фамилия</string>
-    <string name="selectLanguage">Выберите язык</string>
-    <string name="cofirmCode">Подтвердить код</string>
-    <string name="confirmationCode">Код подтверждения</string>
-    <string name="ConfirmationDescription">Код был отправлен на ваш номер телефона, пожалуйста, введите его в поле ниже</string>
-    <string name="forgotPasswordDescription">На ваш телефон отправлен код для восстановления пароля. Пожалуйста, введите код в поле ниже</string>
+    <string name="langSelect">Русский</string>
+    <string name="loginTextline">Имя пользователя</string>
+    <string name="login">Войти</string>
+    <string name="password">Пароль</string>
+    <string name="confirmPassword">Подтвердите пароль</string>
+    <string name="createAccount">Создать аккаунт</string>
+    <string name="resetPassword">Сбросить пароль</string>
+    <string name="dateOfBirthText">Дата рождения:</string>
+    <string name="dateOfBirthSelector">Выберите дату рождения</string>
+    <string name="next">Далее</string>
+    <string name="haveAccount">У меня уже есть аккаунт</string>
 
-    <string-array name="languages">
-        <item>ENG</item>
-        <item>RUS</item>
-        <item>UKR</item>
-        <item>POL</item>
-        <item>SPA</item>
-        <item>POR</item>
-        <item>GER</item>
-        <item>FRA</item>
-        <item>ITA</item>
+    <string name="name">Имя</string>
+    <string name="surname">Фамилия</string>
+    <string name="phoneNumber">Номер телефона</string>
+    <string name="country">Страна</string>
+    <string name="city">Город</string>
+    <string name="cigarettes">Ваши любимые сигареты</string>
+
+    <string-array name="gender_array">
+        <item>Мужской</item>
+        <item>Женский</item>
+        <item>Другое</item>
     </string-array>
+
+    <string name="select_gender_prompt">Выберите пол</string>
+    <string name="back">Назад</string>
+    <string name="confirmRegDesc">Код подтверждения был отправлен на ваш номер телефона. Пожалуйста, введите код в поле ниже.\n\n\n\n\n\n\n</string>
+    <string name="confirmCode">Код подтверждения</string>
+    <string name="confirm">Подтвердить</string>
+    <string name="resendCode">Повторно отправить код</string>
+    <string name="ok">OK</string>
+    <string name="cancel">Отмена</string>
+    <string name="phoneNumberDesc">Пожалуйста, укажите номер телефона, связанный с вашим аккаунтом.</string>
+    <string name="forgotPasswordConfirmDesc">Код подтверждения сброса пароля был отправлен на ваш номер телефона. Пожалуйста, введите код в поле ниже.</string>
+    <string name="newPassword">Новый пароль</string>
+    <string name="confirmNewPassword">Подтвердите новый пароль</string>
+
+    <string name="emptyFields">Пожалуйста, заполните все поля.</string>
+    <string name="wrongCode">Введенный код неверен. Пожалуйста, попробуйте еще раз.</string>
+    <string name="wrongAge">Введенный возраст недействителен. Вы должны быть старше 18 лет.</string>
 </resources>
